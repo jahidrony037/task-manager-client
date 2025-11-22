@@ -105,7 +105,7 @@ const Navbar = () => {
           <div className="">
             {/* Logo */}
             <NavLink
-              to="/dashboard"
+              to="/"
               className="flex items-center gap-3 hover:scale-105 transition-transform duration-300"
             >
               <div className="p-2 bg-white rounded-xl shadow-lg">

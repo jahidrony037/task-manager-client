@@ -8,7 +8,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import useAuth from "../../../hooks/useAuth";
 
@@ -22,6 +22,10 @@ const Login = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
 
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/dashboard";
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
@@ -31,7 +35,7 @@ const Login = () => {
 
     if (result.success) {
       toast.success(result.message);
-      navigate("/dashboard");
+      navigate(from, { replace: true });
     } else {
       setError(result.message);
     }

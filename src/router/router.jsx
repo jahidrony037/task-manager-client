@@ -3,6 +3,7 @@ import AuthLayout from "../layouts/AuthLayout";
 import RootLayout from "../layouts/RootLayout";
 import ForgotPassword from "../pages/Authentication/ForgotPassword/ForgotPassword";
 import Login from "../pages/Authentication/Login/Login";
+import PrivateRoute from "../pages/Authentication/PrivateRoute/PrivateRoute";
 import Register from "../pages/Authentication/Register/Register";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Home from "../pages/Home/Home/Home";
@@ -21,19 +22,35 @@ export const router = createBrowserRouter([
       },
       {
         path: "dashboard",
-        Component: Dashboard,
+        Component: () => (
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        ),
       },
       {
         path: "teams",
-        Component: Teams,
+        Component: () => (
+          <PrivateRoute>
+            <Teams />
+          </PrivateRoute>
+        ),
       },
       {
         path: "tasks",
-        Component: Tasks,
+        Component: () => (
+          <PrivateRoute>
+            <Tasks />
+          </PrivateRoute>
+        ),
       },
       {
         path: "projects",
-        Component: Projects,
+        Component: (
+          <PrivateRoute>
+            <Projects />
+          </PrivateRoute>
+        ),
       },
     ],
   },
