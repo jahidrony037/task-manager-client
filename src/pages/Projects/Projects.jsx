@@ -101,7 +101,7 @@ const Projects = () => {
         <div className="text-center">
           <div className="relative">
             <span className="loading loading-spinner loading-lg text-secondary"></span>
-            <div className="absolute inset-0 loading loading-spinner loading-lg text-secondary opacity-30 blur-sm"></div>
+            {/* <div className="absolute inset-0 loading loading-spinner loading-lg text-secondary opacity-30 blur-sm"></div> */}
           </div>
           <p className="mt-6 text-lg font-semibold bg-linear-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
             Loading projects...

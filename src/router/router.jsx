@@ -46,7 +46,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "projects",
-        Component: (
+        Component: () => (
           <PrivateRoute>
             <Projects />
           </PrivateRoute>
